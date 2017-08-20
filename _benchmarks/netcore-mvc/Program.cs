@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Http;
 
 public class Program
 {
@@ -10,9 +10,6 @@ public class Program
            .UseStartup<Program>().Build()
            .Run();
 
-    public void ConfigureServices(IServiceCollection services)
-        => services.AddMvcCore();
-
     public void Configure(IApplicationBuilder app)
-        => app.UseMvc();
+        => app.Run(ctx => ctx.Response.WriteAsync("value"));
 }
