@@ -1,1 +1,4 @@
 .vscode
+*/netcore-mvc/bin/*
+*/netcore-mvc/obj/*
+*.suo
